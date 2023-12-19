@@ -8,6 +8,8 @@
 #ifndef smm_object_h
 #define smm_object_h
 
+#define MAX_NODES 100 
+
 #define SMMNODE_TYPE_LECTURE            0
 #define SMMNODE_TYPE_RESTAURANT         1
 #define SMMNODE_TYPE_LABORATORY         2
@@ -70,6 +72,8 @@ char* smmObj_getNodeName(void* obj);
 int smmObj_getNodeType(void* obj); 
 int smmObj_getNodeCredit(void* obj); 
 int smmObj_getNodeEnergy(void* obj);
+
+smmObjGrade_e smmObj_getNodeGrade(void* obj);
 
 //element to string
 char* smmObj_getTypeName(int type);
