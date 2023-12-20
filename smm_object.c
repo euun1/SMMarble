@@ -1,5 +1,5 @@
 //
-//  smm_node.c
+//  smm_object.c
 //  SMMarble
 //
 //  Created by Daeun Jung on 2023/11/05.
@@ -86,11 +86,5 @@ int smmObj_getNodeEnergy(void* obj) //에너지 반환
 {
     smmObject_t* ptr = (smmObject_t*)obj;
     return ptr->energy;
-}
-
-smmObjGrade_e smmObj_getNodeGrade(void* obj)
-{
-    smmObject_t* ptr = (smmObject_t*)obj;
-    return ptr->grade;
 }
 

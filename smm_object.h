@@ -6,9 +6,7 @@
 //
 
 #ifndef smm_object_h
-#define smm_object_h
-
-#define MAX_NODES 100 
+#define smm_object_h 
 
 #define SMMNODE_TYPE_LECTURE            0
 #define SMMNODE_TYPE_RESTAURANT         1
@@ -37,7 +35,6 @@ typedef enum smmObjGrade {
     smmObjGrade_C0,
     smmObjGrade_Cm
 } smmObjGrade_e;
-
 
 /* node type :
     lecture,
@@ -73,10 +70,9 @@ int smmObj_getNodeType(void* obj);
 int smmObj_getNodeCredit(void* obj); 
 int smmObj_getNodeEnergy(void* obj);
 
-smmObjGrade_e smmObj_getNodeGrade(void* obj);
-
 //element to string
 char* smmObj_getTypeName(int type);
 
+smmObjGrade_e smmObj_getNodeGrade(void* obj);
 
 #endif /* smm_object_h */
