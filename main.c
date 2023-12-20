@@ -222,29 +222,38 @@ int main(int argc, const char * argv[]) {
     }
     
     printf("\n\nReading food card component......\n");
-    while () //read a food parameter set
-    {
-        //store the parameter set
-    }
+    while (fscanf(fp, " => %*d. %s, charge:%d\n", food_name, &charge) == 2)
+	{
+    // Print the information
+    printf(" => %d. %s, charge:%d\n", food_nr, food_name, charge);
+
+    // Increase the count of food cards
+    food_nr++;
+	}	
     fclose(fp);
     printf("Total number of food cards : %i\n", food_nr);
     
     
     
     //3. festival card config 
-    if ((fp = fopen(FESTFILEPATH,"r")) == NULL)
-    {
-        printf("[ERROR] failed to open %s. This file should be in the same directory of SMMarble.exe.\n", FESTFILEPATH);
-        return -1;
-    }
-    
-    printf("\n\nReading festival card component......\n");
-    while () //read a festival card string
-    {
-        //store the parameter set
-    }
-    fclose(fp);
-    printf("Total number of festival cards : %i\n", festival_nr);
+	if ((fp = fopen(FESTFILEPATH,"r")) == NULL)
+	{
+	    printf("[ERROR] failed to open %s. This file should be in the same directory of SMMarble.exe.\n", FESTFILEPATH);
+	    return -1;
+	}
+	
+	printf("\n\nReading festival card component......\n");
+	while (fscanf(fp, " => %*d. %[^\n]", festival_name) == 1)
+	{
+	    // Print the information
+	    printf(" => %d. %s\n", festival_nr, festival_name);
+	
+	    // Increase the count of festival cards
+	    festival_nr++;
+	}
+	
+	fclose(fp);
+	printf("Total number of festival cards : %i\n", festival_nr);
     #endif
     
     
