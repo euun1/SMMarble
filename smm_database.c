@@ -133,6 +133,10 @@ int smmdb_addTail(int list_nr, void* obj)
         newNdPtr->index = ndPtr->index+1;
     }
     
+    // make the last node's next pointer to point to the first node
+    newNdPtr->next = list_database[list_nr];
+    list_database[list_nr]->prev = newNdPtr;
+    
     listPtr[list_nr] = newNdPtr;
     
     list_cnt[list_nr]++;

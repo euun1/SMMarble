@@ -88,3 +88,13 @@ int smmObj_getNodeEnergy(void* obj) //에너지 반환
     return ptr->energy;
 }
 
+char* smmObj_getTypeName(int type) //노드 이름 반환 
+{
+    return smmNodeName[type];
+}
+
+smmObjGrade_e smmObj_getNodeGrade(void* obj) //노드 등급 반환 
+{
+    smmObject_t* ptr = (smmObject_t*)obj;
+    return ptr->grade;
+}
